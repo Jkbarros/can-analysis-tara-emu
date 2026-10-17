@@ -1,5 +1,7 @@
 # CAN Analysis and TARA
 
+**Language:** English | [Português (Brasil)](README.pt-BR.md)
+
 Capstone project (IA 495, Fall 2024) — **Eastern Michigan University**
 
 **Instructor:** Samir Tout  
