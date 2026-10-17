@@ -77,6 +77,15 @@ SocketCAN usually requires elevated privileges to bring interfaces up/down; scri
 
 See [SavvyCAN AppImage](https://appimage.github.io/SavvyCAN/). Connection type: **QT SerialBus** (PeakCAN / SocketCAN), port `can0`.
 
+## Demo videos
+
+| Recording | Content |
+|-----------|---------|
+| [`docs/demo-python-can-programming.mp4`](docs/demo-python-can-programming.mp4) | Programming and running the Python CAN tooling on the lab VM |
+| [`docs/demo-cluster-can-injection.mp4`](docs/demo-cluster-can-injection.mp4) | 2016 GMC Sierra cluster reacting to injected CAN traffic on the bench |
+
+Videos are tracked with **Git LFS** (~260 MB total). After clone, run `git lfs pull`. Details: [`docs/demos.md`](docs/demos.md).
+
 ## Repository layout
 
 | Path | Description |
@@ -86,6 +95,7 @@ See [SavvyCAN AppImage](https://appimage.github.io/SavvyCAN/). Connection type: 
 | `docs/can-utils-upstream.md` | Attribution and install for [linux-can/can-utils](https://github.com/linux-can/can-utils) |
 | `docs/can-message-notes.md` | CAN IDs captured on the test bench |
 | `scripts/setup-lab-env.sh` | Automates apt + SocketCAN + Python venv on the VM |
+| `docs/demo-*.mp4` | Bench and development recordings (Git LFS) |
 | `IA 495 Final Report.docx` | Submitted capstone report |
 
 ## Results (summary)
