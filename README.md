@@ -65,6 +65,8 @@ Log to file: `candump -l can0`
 
 ### Python scripts
 
+All `.py` files are in the **[`scripts/`](scripts/)** folder ([index](docs/scripts.md)).
+
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate

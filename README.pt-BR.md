@@ -65,6 +65,8 @@ Gravar log: `candump -l can0`
 
 ### Scripts Python
 
+Os arquivos `.py` estão na pasta **[`scripts/`](scripts/)** ([índice](docs/scripts.pt-BR.md)).
+
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
