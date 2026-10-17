@@ -50,6 +50,14 @@ Captured during the Fall 2024 experiments (SavvyCAN / candump) on a **2016 GMC S
 
 Documented in the report as the primary range for speed-related traffic on the bench. Scripts `speed.py` / `speed2.py` also probe IDs `0x180`, `0x1A0`, `0x1C0`, `0x280`, `0x2A0`, `0x2C0`, `0x320`, `0x340`, `0x370`.
 
+## Tachometer / RPM (0xC9)
+
+Discord lab log (`data/logs/rpm_attack_log.txt`) and `scripts/rpm_attack.py` use **0xC9** with payload `[0, rpm>>8, rpm&0xFF, 0, 0, 0, 0, 0]` to jitter the RPM gauge.
+
+## Indicator lamps (blink test)
+
+`scripts/blink_interference.py` floods **0x1F8**, **0x1C9**, **0x415** (IDs from Discord `message.txt`; validate on bench before reuse).
+
 ## Replication checklist
 
 1. VM + SocketCAN + USB2CAN at 500 kbit/s  

@@ -67,8 +67,10 @@ Log to file: `candump -l can0`
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-sudo python3 scripts/speed.py    # multi-ID speed simulation
-sudo python3 scripts/speed2.py   # fixed payloads on selected IDs
+sudo python3 scripts/speed.py              # multi-ID speed simulation
+sudo python3 scripts/speed2.py             # fixed payloads on selected IDs
+sudo python3 scripts/rpm_attack.py         # random RPM flood on 0xC9 (tachometer)
+sudo python3 scripts/blink_interference.py # indicator-lamp flood (0x1F8, 0x1C9, 0x415)
 ```
 
 SocketCAN usually requires elevated privileges to bring interfaces up/down; scripts call `ip link set` on shutdown.
@@ -83,18 +85,23 @@ See [SavvyCAN AppImage](https://appimage.github.io/SavvyCAN/). Connection type: 
 |-----------|---------|
 | [`docs/demo-python-can-programming.mp4`](docs/demo-python-can-programming.mp4) | Programming and running the Python CAN tooling on the lab VM |
 | [`docs/demo-cluster-can-injection.mp4`](docs/demo-cluster-can-injection.mp4) | 2016 GMC Sierra cluster reacting to injected CAN traffic on the bench |
+| [`docs/demo-rpm-attack-2024-11-15.mp4`](docs/demo-rpm-attack-2024-11-15.mp4) | RPM gauge under `0xC9` injection (matches `data/logs/rpm_attack_log.txt`) |
 
-Videos are tracked with **Git LFS** (~260 MB total). After clone, run `git lfs pull`. Details: [`docs/demos.md`](docs/demos.md).
+Videos are tracked with **Git LFS**. After clone, run `git lfs pull`. Details: [`docs/demos.md`](docs/demos.md).
+
+Discord exports (docs, captures, scripts) are indexed in [`docs/discord-archive.md`](docs/discord-archive.md).
 
 ## Repository layout
 
 | Path | Description |
 |------|-------------|
-| `scripts/speed.py` | Cycle through candidate speedometer CAN IDs with ramping speed values |
-| `scripts/speed2.py` | Flood selected IDs with configured byte payloads |
+| `scripts/` | `speed.py`, `speed2.py`, `rpm_attack.py`, `blink_interference.py`, `setup-lab-env.sh` |
+| `data/captures/` | `candump` and SavvyCAN CSV/exports from the bench |
+| `data/logs/` | RPM attack log (2024-11-15) |
+| `deliverables/` | Fact-finding Q&A, PoC report, Gantt chart (from Discord) |
+| `docs/discord-archive.md` | Index of recovered Discord files |
 | `docs/can-utils-upstream.md` | Attribution and install for [linux-can/can-utils](https://github.com/linux-can/can-utils) |
 | `docs/can-message-notes.md` | CAN IDs captured on the test bench |
-| `scripts/setup-lab-env.sh` | Automates apt + SocketCAN + Python venv on the VM |
 | `docs/demo-*.mp4` | Bench and development recordings (Git LFS) |
 | `IA 495 Final Report.docx` | Submitted capstone report |
 

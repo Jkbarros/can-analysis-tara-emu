@@ -3,8 +3,8 @@ __pycache__/
 .venv/
 venv/
 .env
-*.log
-candump-*.log
 _extracted_report.txt
+*_extracted.txt
+# Keep intentional lab logs under data/
 third_party/can-utils/
 
