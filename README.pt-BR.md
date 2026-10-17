@@ -21,6 +21,8 @@ O ambiente de laboratório segue o relatório final: instalar ou clonar **[can-u
 
 > **Segurança:** use apenas em hardware isolado na bancada. Não conecte ferramentas de ataque a um veículo em movimento ou em via pública.
 
+**Demo web:** [jkbarros.github.io/can-analysis-tara-emu](https://jkbarros.github.io/can-analysis-tara-emu/) · GIFs abaixo; vídeos completos em MP4 ou clone com LFS.
+
 ## Hardware (laboratório)
 
 - **Cluster na bancada:** painel de instrumentos **GMC Sierra 2016** (veja [`docs/test-bench-hardware.md`](docs/test-bench-hardware.md))
@@ -103,6 +105,11 @@ Versão interativa: **[`web/index.html`](web/index.html)** (passos + replay de l
 
 Use **`git lfs pull`** após o clone. Detalhes em [`docs/demos.md`](docs/demos.md).
 
+| Preview (GIF) | Vídeo completo |
+|---------------|----------------|
+| ![Injeção no cluster](docs/assets/demo-cluster-preview.gif) | MP4 abaixo |
+| ![Ataque RPM](docs/assets/demo-rpm-preview.gif) | MP4 abaixo |
+
 ### Cluster — injeção CAN (bancada)
 
 <video controls width="100%" src="docs/demo-cluster-can-injection.mp4"></video>
@@ -121,7 +128,7 @@ Use **`git lfs pull`** após o clone. Detalhes em [`docs/demos.md`](docs/demos.m
 
 [Abrir arquivo](docs/demo-python-can-programming.mp4)
 
-> **GIF no README:** usamos MP4 (melhor qualidade/tamanho). Para GIF, exporte um trecho curto com `ffmpeg` em `docs/assets/` e use `![descrição](docs/assets/preview.gif)`.
+> Os GIFs em [`docs/assets/`](docs/assets/) são loops curtos; qualidade total nos MP4.
 
 ## Gravação de logs
 

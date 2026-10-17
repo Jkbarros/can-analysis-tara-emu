@@ -21,6 +21,8 @@ Lab tooling follows the same workflow as the final report: clone or install **[c
 
 > **Safety:** Run only on isolated bench hardware. Do not connect attack tooling to a moving vehicle or public roads.
 
+**Live demo UI:** [jkbarros.github.io/can-analysis-tara-emu](https://jkbarros.github.io/can-analysis-tara-emu/) · GIF previews below; full videos via MP4 or LFS clone.
+
 ## Hardware (lab)
 
 - **Test bench cluster:** **2016 GMC Sierra** instrument cluster (see [`docs/test-bench-hardware.md`](docs/test-bench-hardware.md))
@@ -103,6 +105,11 @@ Interactive version: **[`web/index.html`](web/index.html)** (state steps + sampl
 
 Clone with **`git lfs pull`** so the files below play (Git LFS). More detail: [`docs/demos.md`](docs/demos.md).
 
+| Preview (GIF) | Full video |
+|---------------|------------|
+| ![Cluster injection](docs/assets/demo-cluster-preview.gif) | MP4 below |
+| ![RPM attack](docs/assets/demo-rpm-preview.gif) | MP4 below |
+
 ### Cluster — CAN injection (bench)
 
 <video controls width="100%" src="docs/demo-cluster-can-injection.mp4"></video>
@@ -121,7 +128,7 @@ Clone with **`git lfs pull`** so the files below play (Git LFS). More detail: [`
 
 [Open file](docs/demo-python-can-programming.mp4)
 
-> **GIF previews:** GitHub README uses MP4 (smoother, smaller than GIF). To add a GIF, export a short clip with `ffmpeg` into `docs/assets/` and embed with `![alt](docs/assets/preview.gif)`.
+> GIFs in [`docs/assets/`](docs/assets/) are short loops for the README; full quality is in the MP4 files.
 
 ## Log recording
 
