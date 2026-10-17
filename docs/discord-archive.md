@@ -6,7 +6,7 @@ Files recovered from the Group 4 Discord workspace (Fall 2024) and organized in 
 
 | File | Description |
 |------|-------------|
-| `Group4_FactFindingQuestions_answers.docx` | Client Q&A, team E-numbers, Sill Lab test bench scope |
+| `Group4_FactFindingQuestions_answers.md` | Client Q&A (EMU student IDs redacted), Sill Lab test bench scope |
 | `IA 495 Proof of Concept Group 4.docx` | Proof-of-concept report (precursor to final report) |
 | `Gantt chart.xlsx` | Project timeline |
 

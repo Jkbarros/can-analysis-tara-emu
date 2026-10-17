@@ -100,7 +100,7 @@ Discord exports (docs, captures, scripts) are indexed in [`docs/discord-archive.
 | `scripts/` | `speed.py`, `speed2.py`, `rpm_attack.py`, `blink_interference.py`, `setup-lab-env.sh` |
 | `data/captures/` | `candump` and SavvyCAN CSV/exports from the bench |
 | `data/logs/` | RPM attack log (2024-11-15) |
-| `deliverables/` | Fact-finding Q&A, PoC report, Gantt chart (from Discord) |
+| `deliverables/` | Fact-finding Q&A (redacted `.md`), PoC report, Gantt chart |
 | `docs/discord-archive.md` | Index of recovered Discord files |
 | `docs/can-utils-upstream.md` | Attribution and install for [linux-can/can-utils](https://github.com/linux-can/can-utils) |
 | `docs/can-message-notes.md` | CAN IDs captured on the test bench |
@@ -118,6 +118,11 @@ Discord exports (docs, captures, scripts) are indexed in [`docs/discord-archive.
 - **SocketCAN tools:** [linux-can/can-utils](https://github.com/linux-can/can-utils)
 - Final report bibliography (CANAttack, protocol-compliant DoS on CAN, MDPI CAN security survey, CSS Electronics CAN intro)
 
-## License
+## License and safety
+
+- **[LICENSE](LICENSE)** — MIT (Group 4, Fall 2024)
+- **[SECURITY.md](SECURITY.md)** — lab-only use; do not use on road vehicles
+- **[CHANGELOG.md](CHANGELOG.md)** — repository history
+- **[docs/PUBLIC_RELEASE.md](docs/PUBLIC_RELEASE.md)** — checklist before making the repo public
 
 Academic / educational use. Contact authors for other uses.

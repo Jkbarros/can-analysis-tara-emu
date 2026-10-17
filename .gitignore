@@ -7,4 +7,6 @@ _extracted_report.txt
 *_extracted.txt
 # Keep intentional lab logs under data/
 third_party/can-utils/
+# Keep local copy with student IDs; public repo uses .md redaction
+deliverables/Group4_FactFindingQuestions_answers.docx
 
