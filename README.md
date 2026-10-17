@@ -7,7 +7,7 @@
 [![SocketCAN](https://img.shields.io/badge/SocketCAN-can--utils-005571?style=for-the-badge)](docs/can-utils-upstream.md)
 [![Capstone](https://img.shields.io/badge/EMU-IA%20495%20Fall%202024-006633?style=for-the-badge)](IA%20495%20Final%20Report.docx)
 
-**Language:** English | [Português (Brasil)](README.pt-BR.md) · LinkedIn copy: [`docs/LINKEDIN-portfolio.md`](docs/LINKEDIN-portfolio.md)
+**Language:** English | [Português (Brasil)](README.pt-BR.md) · LinkedIn (bilingual): [`docs/LINKEDIN-portfolio.md`](docs/LINKEDIN-portfolio.md)
 
 Capstone project (IA 495, Fall 2024) — **Eastern Michigan University**
 

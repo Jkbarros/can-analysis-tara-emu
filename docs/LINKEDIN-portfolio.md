@@ -1,77 +1,129 @@
-# LinkedIn — copy suggestions (Julio)
+# LinkedIn — bilingual portfolio copy (Julio)
 
-Use in **Featured**, **Experience/Education**, or a short **post**. Adjust dates and links as needed.
+**Links (use in every section):**
 
----
+| | URL |
+|---|-----|
+| Repository | https://github.com/Jkbarros/can-analysis-tara-emu |
+| Live demo | https://jkbarros.github.io/can-analysis-tara-emu/ |
 
-## Featured link (card)
-
-| Field | Suggestion |
-|-------|------------|
-| **Title** | CAN Bus Security & TARA — Capstone (EMU) |
-| **URL** | https://github.com/Jkbarros/can-analysis-tara-emu |
-| **Description** | DoS research on a 2016 GMC Sierra test bench: SocketCAN, Python, TARA. Live demo + code. |
-
-Optional second link: https://jkbarros.github.io/can-analysis-tara-emu/
+**Profile tip:** Set LinkedIn **primary language** to English (strong for EMU + automotive security). Add Portuguese in **About** below or use the bilingual post template.
 
 ---
 
-## Project entry (Projects section)
+## Headline (choose one line)
+
+**English (recommended default)**  
+`Software Engineer | Automotive CAN Security & TARA (Capstone) | Python · Linux · SocketCAN`
+
+**Português**  
+`Engenheiro de Software | Segurança CAN & TARA (Capstone EMU) | Python · Linux · SocketCAN`
+
+**Bilingual (compact)**  
+`Software Engineer / Eng. de Software · CAN bus security · Python & Linux`
+
+---
+
+## About — English (paste in About, first block)
+
+Capstone researcher (IA 495, Eastern Michigan University) focused on **automotive CAN bus security**. Our team applied **Threat Analysis and Risk Assessment (TARA)** and lab-only **Denial of Service** experiments on a **2016 GMC Sierra** instrument-cluster test bench—SocketCAN, **can-utils**, Python, and SavvyCAN. Open-source repo with scripts, captures, final report, and a live demo.
+
+**Project:** https://github.com/Jkbarros/can-analysis-tara-emu  
+**Demo:** https://jkbarros.github.io/can-analysis-tara-emu/
+
+---
+
+## Sobre — Português (second paragraph in About, or “Add profile in another language”)
+
+Pesquisa de conclusão (IA 495, Eastern Michigan University) em **segurança de barramento CAN** automotivo. A equipe aplicou **TARA** e testes de **DoS** apenas em laboratório, em bancada com cluster **GMC Sierra 2016**—SocketCAN, **can-utils**, Python e SavvyCAN. Repositório público com scripts, logs, relatório e demo interativa.
+
+**Repositório:** https://github.com/Jkbarros/can-analysis-tara-emu  
+**Demo:** https://jkbarros.github.io/can-analysis-tara-emu/
+
+---
+
+## Featured — two cards (bilingual audience)
+
+**Card 1 — Code & report**
+
+| Field | English | Português (if UI allows) |
+|-------|---------|---------------------------|
+| Title | CAN Security Capstone — GitHub | Capstone CAN — GitHub |
+| URL | https://github.com/Jkbarros/can-analysis-tara-emu | same |
+| Description | TARA, DoS lab tests, Python scripts, GMC Sierra bench. | TARA, DoS em bancada, scripts Python, GMC Sierra. |
+
+**Card 2 — Live demo**
+
+| Field | English |
+|-------|---------|
+| Title | CAN Lab Monitor — Live Demo |
+| URL | https://jkbarros.github.io/can-analysis-tara-emu/ |
+| Description | State machine, log replay, bench GIFs. / Máquina de estados, log e GIFs da bancada. |
+
+---
+
+## Projects — English
 
 **CAN Analysis and TARA — IA 495 Capstone**  
-*Eastern Michigan University · Fall 2024*
+*Eastern Michigan University · Fall 2024 · Group 4*
 
-- Performed **Threat Analysis and Risk Assessment (TARA)** on automotive **CAN bus** threats, focusing on **Denial of Service** via message flooding.
-- Built a **controlled lab** with Linux (SocketCAN), **can-utils**, SavvyCAN, and **Python** scripts to inject frames against a **2016 GMC Sierra** instrument-cluster test bench (not on-road).
-- Documented CAN IDs, captured **candump** / SavvyCAN logs, and demonstrated gauge disruption (speedometer, RPM).
-- Delivered final report, PoC, and Agile/Scrum tracking (Jira) with a team of four.
+- **TARA** on CAN threats; **DoS** via message flooding in a controlled lab.
+- Linux **SocketCAN**, **can-utils**, **Python** injection scripts, **SavvyCAN** captures on a **2016 GMC Sierra** cluster bench (not on-road).
+- Documented CAN IDs, **candump** / CSV logs, speedometer & RPM disruption demos.
+- Agile/Scrum (**Jira**), final report, proof-of-concept, public repo rebuild (2026).
 
-**Skills:** Automotive cybersecurity · CAN bus · Penetration testing (lab) · Python · Linux · Risk assessment
-
-**Links:** [Repository](https://github.com/Jkbarros/can-analysis-tara-emu) · [Live demo](https://jkbarros.github.io/can-analysis-tara-emu/)
+**Skills:** Automotive cybersecurity · CAN bus · Python · Linux · Risk assessment · SocketCAN
 
 ---
 
-## Short post (English — good for international network)
+## Projetos — Português
 
-**Capstone shipped: CAN bus security at the bench**
+**Análise CAN e TARA — Capstone IA 495**  
+*Eastern Michigan University · Outono 2024 · Grupo 4*
 
-For my IA 495 project at Eastern Michigan University, our team studied **CAN bus** resilience using **TARA** and lab-only **DoS** tests (message flooding) on a **2016 GMC Sierra** cluster test bench.
+- **TARA** para ameaças no CAN; **DoS** por saturação em laboratório controlado.
+- **SocketCAN**, **can-utils**, scripts **Python**, capturas **SavvyCAN** em bancada **GMC Sierra 2016** (não em via pública).
+- IDs CAN documentados, logs **candump** / CSV, demos de velocímetro e RPM.
+- Agile/Scrum (**Jira**), relatório final, PoC, repositório público reconstruído (2026).
 
-Stack: Linux SocketCAN, can-utils, Python, SavvyCAN.
-
-Repo (code, logs, report): https://github.com/Jkbarros/can-analysis-tara-emu  
-Interactive demo: https://jkbarros.github.io/can-analysis-tara-emu/
-
-Lab-only research — not for use on public roads.
-
-#Cybersecurity #Automotive #EmbeddedSystems #Capstone #CANBus
+**Competências:** Segurança automotiva · CAN bus · Python · Linux · Análise de risco · SocketCAN
 
 ---
 
-## Post curto (Português)
+## Single bilingual post (copy entire post)
 
-**TCC / Capstone: segurança em barramento CAN**
+🇺🇸 **Capstone: CAN bus security (lab-only)**
 
-No projeto IA 495 (EMU), analisamos riscos (**TARA**) e simulamos **DoS** por saturação de mensagens em bancada com cluster **GMC Sierra 2016** — ambiente controlado, sem veículo em via pública.
+IA 495 @ Eastern Michigan University — **TARA**, **DoS** message flooding, **2016 GMC Sierra** test bench. Stack: SocketCAN, can-utils, Python, SavvyCAN.
 
-Ferramentas: Linux, SocketCAN, can-utils, Python, SavvyCAN.
-
-Código e relatório: https://github.com/Jkbarros/can-analysis-tara-emu  
-Demo: https://jkbarros.github.io/can-analysis-tara-emu/
-
-#SegurançaDaInformação #Automotivo #CAN #TCC
+🔗 Repo: https://github.com/Jkbarros/can-analysis-tara-emu  
+🖥️ Demo: https://jkbarros.github.io/can-analysis-tara-emu/
 
 ---
 
-## Experience bullet (if you list EMU or an internship)
+🇧🇷 **Capstone: segurança CAN (somente bancada)**
 
-- Led hands-on **CAN bus security** capstone: threat modeling (**TARA**), traffic capture, and Python-based injection tests on an isolated **OBD/CAN test bench**, with documented mitigations (rate limiting, authentication, anomaly detection).
+IA 495 @ Eastern Michigan University — **TARA**, **DoS** por flood de mensagens, bancada **GMC Sierra 2016**. Stack: SocketCAN, can-utils, Python, SavvyCAN.
+
+🔗 Repositório: https://github.com/Jkbarros/can-analysis-tara-emu  
+🖥️ Demo: https://jkbarros.github.io/can-analysis-tara-emu/
+
+#Cybersecurity #Automotive #CANBus #SegurançaDaInformação #Capstone #TCC #Python
 
 ---
 
-## Headline tweak (optional, one line)
+## Education line (EMU) — bilingual bullet
 
-Example: *Software Engineer · CAN / automotive security research · Python & Linux*
+**EN:** Capstone IA 495 — CAN Analysis & TARA: threat modeling, SocketCAN lab, Python attack scripts, public portfolio (GitHub + Pages).
 
-Keep your real title; only add if it fits your profile.
+**PT:** Capstone IA 495 — Análise CAN & TARA: modelagem de ameaças, laboratório SocketCAN, scripts Python, portfólio público (GitHub + Pages).
+
+---
+
+## Hashtags
+
+| English | Português |
+|---------|-----------|
+| #Cybersecurity #Automotive #EmbeddedSystems #CANBus #PenetrationTesting #OpenSource | #SegurançaDaInformação #Automotivo #CAN #TCC #EngenhariaDeSoftware |
+
+Use 3–5 per post; mix EN + PT tags only if your network is bilingual.
