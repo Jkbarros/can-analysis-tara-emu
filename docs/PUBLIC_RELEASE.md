@@ -19,10 +19,7 @@ Use this before changing repository visibility to **public**.
 
 ## Git history note
 
-An earlier commit included `deliverables/Group4_FactFindingQuestions_answers.docx` **with student ID numbers**. The file is deleted on `master` now, but old commits still contain it. Before going public you can:
-
-1. **Accept the risk** (IDs were only in that one file), or  
-2. **Rewrite history** with [git-filter-repo](https://github.com/newren/git-filter-repo) to purge that path, then force-push (coordinate with anyone who cloned the repo).
+History was rewritten with `git-filter-repo` to **remove** `deliverables/Group4_FactFindingQuestions_answers.docx` (student IDs) from all commits. Anyone who cloned before March 2026 should **re-clone** or hard-reset to current `master`.
 
 ## Make public (when ready)
 
