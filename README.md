@@ -1,6 +1,13 @@
 # CAN Analysis and TARA
 
-**Language:** English | [Português (Brasil)](README.pt-BR.md)
+[![Live demo](https://img.shields.io/website?url=https%3A%2F%2Fjkbarros.github.io%2Fcan-analysis-tara-emu%2F&label=demo&style=for-the-badge)](https://jkbarros.github.io/can-analysis-tara-emu/)
+[![GitHub](https://img.shields.io/badge/GitHub-can--analysis--tara--emu-181717?style=for-the-badge&logo=github)](https://github.com/Jkbarros/can-analysis-tara-emu)
+[![License: MIT](https://img.shields.io/github/license/Jkbarros/can-analysis-tara-emu?style=for-the-badge)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3-scripts-3776AB?style=for-the-badge&logo=python&logoColor=white)](scripts/)
+[![SocketCAN](https://img.shields.io/badge/SocketCAN-can--utils-005571?style=for-the-badge)](docs/can-utils-upstream.md)
+[![Capstone](https://img.shields.io/badge/EMU-IA%20495%20Fall%202024-006633?style=for-the-badge)](IA%20495%20Final%20Report.docx)
+
+**Language:** English | [Português (Brasil)](README.pt-BR.md) · LinkedIn copy: [`docs/LINKEDIN-portfolio.md`](docs/LINKEDIN-portfolio.md)
 
 Capstone project (IA 495, Fall 2024) — **Eastern Michigan University**
 
