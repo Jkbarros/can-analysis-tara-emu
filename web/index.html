@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CAN Lab Monitor — IA 495 (demo)</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --panel: #1a2332;
+      --accent: #3d9eff;
+      --ok: #3dd68c;
+      --warn: #ffb020;
+      --danger: #ff6b6b;
+      --text: #e7ecf3;
+      --muted: #8b9cb3;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid #2a3544;
+      background: linear-gradient(180deg, #15202b, var(--bg));
+    }
+    header h1 { margin: 0 0 0.25rem; font-size: 1.35rem; }
+    header p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      display: grid;
+      gap: 1.25rem;
+    }
+    .grid { display: grid; gap: 1.25rem; }
+    @media (min-width: 900px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+    }
+    section {
+      background: var(--panel);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      border: 1px solid #2a3544;
+    }
+    h2 { margin: 0 0 0.75rem; font-size: 1rem; color: var(--accent); }
+    .states {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .state {
+      padding: 0.45rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      background: #243044;
+      color: var(--muted);
+      border: 1px solid transparent;
+      transition: all 0.25s ease;
+    }
+    .state.active {
+      background: #1e3a5f;
+      color: var(--text);
+      border-color: var(--accent);
+      box-shadow: 0 0 12px rgba(61, 158, 255, 0.35);
+    }
+    .state.done { color: var(--ok); border-color: var(--ok); }
+    .arrow { color: var(--muted); font-size: 0.85rem; }
+    #log {
+      font-family: ui-monospace, "Cascadia Code", monospace;
+      font-size: 0.72rem;
+      background: #0c1017;
+      border-radius: 8px;
+      padding: 0.75rem;
+      height: 220px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      color: #b8c5d6;
+    }
+    .controls { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem; }
+    button {
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      background: var(--accent);
+      color: #041018;
+      font-weight: 600;
+    }
+    button.secondary { background: #2a3544; color: var(--text); }
+    button:disabled { opacity: 0.45; cursor: not-allowed; }
+    .meta { font-size: 0.8rem; color: var(--muted); margin-top: 0.5rem; }
+    video { width: 100%; border-radius: 8px; background: #000; }
+    a { color: var(--accent); }
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      background: #2a3544;
+      margin-left: 0.35rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CAN Lab Monitor <span class="badge">portfolio demo</span></h1>
+    <p>2016 GMC Sierra bench · SocketCAN · educational replay (not a live bus)</p>
+  </header>
+  <main>
+    <section>
+      <h2>Experiment state machine</h2>
+      <div class="states" id="stateMachine">
+        <span class="state" data-step="0">1. Setup VM / can0</span>
+        <span class="arrow">→</span>
+        <span class="state" data-step="1">2. Baseline capture</span>
+        <span class="arrow">→</span>
+        <span class="state" data-step="2">3. Run attack script</span>
+        <span class="arrow">→</span>
+        <span class="state" data-step="3">4. Observe cluster</span>
+        <span class="arrow">→</span>
+        <span class="state" data-step="4">5. Stop &amp; log</span>
+      </div>
+      <div class="controls">
+        <button type="button" id="btnNext">Advance step</button>
+        <button type="button" class="secondary" id="btnReset">Reset</button>
+        <button type="button" class="secondary" id="btnReplayLog">Replay sample log</button>
+      </div>
+      <p class="meta">Mirrors the TARA / lab workflow in the final report. Real tests use <code>candump</code>, SavvyCAN, and <code>scripts/*.py</code>.</p>
+    </section>
+
+    <section>
+      <h2>Attack log (sample)</h2>
+      <div id="log"></div>
+      <p class="meta">Excerpt from <code>data/logs/rpm_attack_log.txt</code> (RPM flood on 0xC9).</p>
+    </section>
+
+    <section class="grid" style="grid-column: 1 / -1; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+      <div>
+        <h2>Cluster injection</h2>
+        <video controls preload="metadata" poster="">
+          <source src="../docs/demo-cluster-can-injection.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div>
+        <h2>RPM attack</h2>
+        <video controls preload="metadata">
+          <source src="../docs/demo-rpm-attack-2024-11-15.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </section>
+
+    <section>
+      <h2>Repository</h2>
+      <p class="meta">
+        <a href="https://github.com/Jkbarros/can-analysis-tara-emu">can-analysis-tara-emu</a> —
+        run locally: <code>python -m http.server 8080</code> from repo root, open
+        <code>/web/index.html</code>. Enable GitHub Pages with source <code>/web</code> for hosting.
+      </p>
+    </section>
+  </main>
+  <script>
+    const SAMPLE_LOG = `2024-11-15 11:01:14,855 - Sent RPM 3876 to CAN ID 0xc9 - Data: [0, 15, 36, 0, 0, 0, 0, 0]
+2024-11-15 11:01:15,304 - Sent RPM 4463 to CAN ID 0xc9 - Data: [0, 17, 111, 0, 0, 0, 0, 0]
+2024-11-15 11:01:15,416 - Sent RPM 6817 to CAN ID 0xc9 - Data: [0, 26, 161, 0, 0, 0, 0, 0]
+2024-11-15 11:01:17,765 - Sent RPM 2411 to CAN ID 0xc9 - Data: [0, 9, 107, 0, 0, 0, 0, 0]
+2024-11-15 11:01:20,820 - Sent RPM 5012 to CAN ID 0xc9 - Data: [0, 19, 148, 0, 0, 0, 0, 0]
+2024-11-15 11:03:25,333 - CAN interface shut down after attack.`;
+
+    const states = document.querySelectorAll(".state[data-step]");
+    let current = -1;
+    const logEl = document.getElementById("log");
+
+    function renderStates() {
+      states.forEach((el) => {
+        const step = Number(el.dataset.step);
+        el.classList.remove("active", "done");
+        if (step < current) el.classList.add("done");
+        if (step === current) el.classList.add("active");
+      });
+    }
+
+    document.getElementById("btnNext").addEventListener("click", () => {
+      current = Math.min(current + 1, states.length - 1);
+      renderStates();
+      if (current === 2) appendLog(">> Starting rpm_attack.py on can0…\n");
+      if (current === 4) appendLog(">> CAN interface shut down after attack.\n");
+    });
+
+    document.getElementById("btnReset").addEventListener("click", () => {
+      current = -1;
+      logEl.textContent = "";
+      renderStates();
+    });
+
+    function appendLog(text) {
+      logEl.textContent += text;
+      logEl.scrollTop = logEl.scrollHeight;
+    }
+
+    document.getElementById("btnReplayLog").addEventListener("click", async () => {
+      logEl.textContent = "";
+      for (const line of SAMPLE_LOG.split("\n")) {
+        appendLog(line + "\n");
+        await new Promise((r) => setTimeout(r, 120));
+      }
+    });
+
+    renderStates();
+  </script>
+</body>
+</html>

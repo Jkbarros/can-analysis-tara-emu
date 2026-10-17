@@ -83,15 +83,53 @@ SocketCAN usually requires elevated privileges to bring interfaces up/down; scri
 
 See [SavvyCAN AppImage](https://appimage.github.io/SavvyCAN/). Connection type: **QT SerialBus** (PeakCAN / SocketCAN), port `can0`.
 
+## Lab workflow (state machine)
+
+```mermaid
+stateDiagram-v2
+    direction LR
+    [*] --> Setup: VM + USB2CAN
+    Setup --> Baseline: candump / SavvyCAN
+    Baseline --> Attack: scripts/*.py or cangen
+    Attack --> Observe: gauges + error frames
+    Observe --> Recovery: stop flood
+    Recovery --> Archive: logs + CSV
+    Archive --> [*]
+```
+
+Interactive version: **[`web/index.html`](web/index.html)** (state steps + sample log replay). Host with [GitHub Pages](web/README.md) or `python -m http.server` from the repo root.
+
 ## Demo videos
 
-| Recording | Content |
-|-----------|---------|
-| [`docs/demo-python-can-programming.mp4`](docs/demo-python-can-programming.mp4) | Programming and running the Python CAN tooling on the lab VM |
-| [`docs/demo-cluster-can-injection.mp4`](docs/demo-cluster-can-injection.mp4) | 2016 GMC Sierra cluster reacting to injected CAN traffic on the bench |
-| [`docs/demo-rpm-attack-2024-11-15.mp4`](docs/demo-rpm-attack-2024-11-15.mp4) | RPM gauge under `0xC9` injection (matches `data/logs/rpm_attack_log.txt`) |
+Clone with **`git lfs pull`** so the files below play (Git LFS). More detail: [`docs/demos.md`](docs/demos.md).
 
-Videos are tracked with **Git LFS**. After clone, run `git lfs pull`. Details: [`docs/demos.md`](docs/demos.md).
+### Cluster — CAN injection (bench)
+
+<video controls width="100%" src="docs/demo-cluster-can-injection.mp4"></video>
+
+[Open file](docs/demo-cluster-can-injection.mp4) · 2016 GMC Sierra cluster under injected traffic
+
+### RPM flood (`0xC9`)
+
+<video controls width="100%" src="docs/demo-rpm-attack-2024-11-15.mp4"></video>
+
+[Open file](docs/demo-rpm-attack-2024-11-15.mp4) · pairs with [`data/logs/rpm_attack_log.txt`](data/logs/rpm_attack_log.txt)
+
+### Python / VM setup
+
+<video controls width="100%" src="docs/demo-python-can-programming.mp4"></video>
+
+[Open file](docs/demo-python-can-programming.mp4)
+
+> **GIF previews:** GitHub README uses MP4 (smoother, smaller than GIF). To add a GIF, export a short clip with `ffmpeg` into `docs/assets/` and embed with `![alt](docs/assets/preview.gif)`.
+
+## Log recording
+
+| Source | Output | In this repo |
+|--------|--------|----------------|
+| `candump -l can0` | SocketCAN log | [`data/captures/candump-2024-11-11_195750.log`](data/captures/candump-2024-11-11_195750.log) |
+| SavvyCAN export | CSV / traces | [`data/captures/speed-test-savvycan.csv`](data/captures/speed-test-savvycan.csv) |
+| `rpm_attack.py` | Timestamped lines | [`data/logs/rpm_attack_log.txt`](data/logs/rpm_attack_log.txt) |
 
 Discord exports (docs, captures, scripts) are indexed in [`docs/discord-archive.md`](docs/discord-archive.md).
 
@@ -106,6 +144,7 @@ Discord exports (docs, captures, scripts) are indexed in [`docs/discord-archive.
 | `docs/discord-archive.md` | Index of recovered Discord files |
 | `docs/can-utils-upstream.md` | Attribution and install for [linux-can/can-utils](https://github.com/linux-can/can-utils) |
 | `docs/can-message-notes.md` | CAN IDs captured on the test bench |
+| `web/` | Static lab monitor UI (state machine, log replay, videos) |
 | `docs/demo-*.mp4` | Bench and development recordings (Git LFS) |
 | `IA 495 Final Report.docx` | Submitted capstone report |
 

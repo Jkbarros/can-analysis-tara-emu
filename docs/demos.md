@@ -1,6 +1,6 @@
 # Lab demo recordings (Fall 2024)
 
-Screen and bench recordings from the IA 495 capstone experiments. Video files are stored with **Git LFS**.
+Screen and bench recordings from the IA 495 capstone experiments. Video files are stored with **Git LFS** and embedded in the [README](../README.md) with HTML `<video>` tags (view on github.com after `git lfs pull`).
 
 | File | Description | Recorded |
 |------|-------------|----------|
